@@ -13,17 +13,12 @@ const About = () => {
 
   const team = [
     {
-      name: 'M. Lachbi Omar',
+      name: 'M. Louridi Omar',
       role: language === 'fr' ? 'Directeur Général' : language === 'ar' ? 'المدير العام' : 'General Director',
       image: '👨‍💼',
     },
     {
-      name: 'Mme. Sara Alaoui',
-      role: language === 'fr' ? 'Responsable Admissions' : language === 'ar' ? 'مسؤولة القبول' : 'Admissions Manager',
-      image: '👩‍💼',
-    },
-    {
-      name: 'M. Karim Benjelloun',
+      name: 'M. Amanssour Khalil',
       role: language === 'fr' ? 'Conseiller Visa' : language === 'ar' ? 'مستشار التأشيرات' : 'Visa Advisor',
       image: '👨‍💻',
     },
@@ -94,7 +89,7 @@ const About = () => {
               ? 'خبراء متحمسون مكرسون لنجاحك الأكاديمي.'
               : 'Passionate experts dedicated to your academic success.'}
           </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="text-center">
                 <div className="text-7xl mb-4">{member.image}</div>

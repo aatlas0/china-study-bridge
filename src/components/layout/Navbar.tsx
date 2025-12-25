@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import logoFull from '@/assets/logo-full.svg';
+import { useCurrency } from '@/contexts/CurrencyContext';
+import Logo from '@/components/ui/Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const { currency, setCurrency } = useCurrency();
   const location = useLocation();
 
   const navLinks = [
@@ -32,7 +34,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src={logoFull} alt="Study In Asia" className="h-10 md:h-12" />
+            <Logo className="h-10 md:h-12" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,9 +43,8 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`nav-link text-sm font-medium ${
-                  location.pathname === link.path ? 'text-primary' : ''
-                }`}
+                className={`nav-link text-sm font-medium ${location.pathname === link.path ? 'text-primary' : ''
+                  }`}
               >
                 {link.label}
               </Link>
@@ -58,13 +59,28 @@ const Navbar = () => {
                 <button
                   key={lang.code}
                   onClick={() => setLanguage(lang.code)}
-                  className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
-                    language === lang.code
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
+                  className={`px-2 py-1 text-xs font-medium rounded transition-colors ${language === lang.code
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                    }`}
                 >
                   {lang.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Currency Selector */}
+            <div className="hidden xs:flex items-center gap-1 bg-secondary rounded-lg p-1">
+              {(['MAD', 'USD', 'CNY'] as const).map((curr) => (
+                <button
+                  key={curr}
+                  onClick={() => setCurrency(curr)}
+                  className={`px-2 py-1 text-[10px] md:text-xs font-bold rounded transition-colors ${currency === curr
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                >
+                  {curr}
                 </button>
               ))}
             </div>
@@ -107,21 +123,35 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in space-y-4">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-foreground hover:bg-secondary'
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${location.pathname === link.path
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-foreground hover:bg-secondary'
+                    }`}
                 >
                   {link.label}
                 </Link>
+              ))}
+            </div>
+            {/* Mobile Currency Selector */}
+            <div className="xs:hidden flex items-center justify-center gap-1 bg-secondary rounded-lg p-1 mx-4">
+              {(['MAD', 'USD', 'CNY'] as const).map((curr) => (
+                <button
+                  key={curr}
+                  onClick={() => setCurrency(curr)}
+                  className={`flex-1 py-2 text-xs font-bold rounded transition-colors ${currency === curr
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground'
+                    }`}
+                >
+                  {curr}
+                </button>
               ))}
             </div>
           </div>
