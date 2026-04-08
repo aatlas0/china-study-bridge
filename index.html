@@ -9,7 +9,8 @@
     content="Study In Asia accompagne les étudiants marocains vers les meilleures universités chinoises. Orientation, visa, bourses et accompagnement complet. Basé à Meknès, Maroc." />
   <meta name="keywords"
     content="étudier en Chine, université Chine, bourse Chine, CSC, étudiant marocain, Study In Asia, Meknès" />
-  <meta name="author" content="Study In Asia" />
+  <meta name="author" content="Abdellatif Bougataya" />
+  <meta name="designer" content="Youssef Aamir" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://studyinasia.ma/" />
@@ -22,10 +23,29 @@
   <meta name="twitter:description"
     content="Votre passerelle vers les meilleures universités chinoises. Accompagnement complet pour étudiants marocains." />
 
-  <link rel="icon" type="image/png" href="/src/assets/logo-icon.png" />
+  <link rel="icon" type="image/png" href="/src/assets/favicon.ico" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1867656980781567');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1867656980781567&ev=PageView&noscript=1" /></noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

@@ -34,7 +34,7 @@ export const translations = {
       },
       dossier: {
         title: 'Préparation du Dossier',
-        desc: 'Assistance complète pour la constitution de votre dossier de candidature et tous les documents requis.',
+        desc: 'Assistance complète pour la constitution de votre dossier de candidature.',
       },
       visa: {
         title: 'Visa & Installation',
@@ -103,7 +103,7 @@ export const translations = {
       message: 'Message',
       send: 'Envoyer',
       address: 'Adresse',
-      hours: 'Horaires',
+      hours: 'Horaires - Sur Rendez-vous',
     },
     footer: {
       description: "Votre partenaire de confiance pour étudier en Chine. Nous accompagnons les étudiants marocains vers l'excellence académique.",
@@ -188,7 +188,7 @@ export const translations = {
       },
       dossier: {
         title: 'إعداد الملف',
-        desc: 'مساعدة كاملة في تحضير ملف الترشيح وجميع الوثائق المطلوبة.',
+        desc: 'مساعدة كاملة في تحضير ملف الترشيح.',
       },
       visa: {
         title: 'التأشيرة والإقامة',
@@ -257,7 +257,7 @@ export const translations = {
       message: 'الرسالة',
       send: 'إرسال',
       address: 'العنوان',
-      hours: 'ساعات العمل',
+      hours: 'ساعات العمل - بموعد مسبق',
     },
     footer: {
       description: 'شريكك الموثوق للدراسة في الصين. نرافق الطلاب المغاربة نحو التميز الأكاديمي.',
@@ -342,7 +342,7 @@ export const translations = {
       },
       dossier: {
         title: 'Application Preparation',
-        desc: 'Complete assistance in preparing your application file and all required documents.',
+        desc: 'Complete assistance in preparing your application file.',
       },
       visa: {
         title: 'Visa & Settlement',
@@ -411,7 +411,7 @@ export const translations = {
       message: 'Message',
       send: 'Send',
       address: 'Address',
-      hours: 'Hours',
+      hours: 'Hours - By Appointment',
     },
     footer: {
       description: 'Your trusted partner for studying in China. We guide Moroccan students towards academic excellence.',
